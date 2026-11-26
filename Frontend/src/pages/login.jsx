@@ -2,8 +2,8 @@ import { useState } from 'react'
 
 
 function App() {
-  const [email, setEmail] = useState("")
-  const [pass, setPass] = useState("")
+ // const [email, setEmail] = useState("....")
+  // const [pass, setPass] = useState("")
   function print(){
     console.log("printing inside the print function")
     console.log(email,pass)
