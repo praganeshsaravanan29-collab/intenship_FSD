@@ -2,7 +2,7 @@ function Dashboard() {
     const location=useLocation();
     const[userdata,setUserdata]=useState("");
     function displaydata(){
-        setUserdata(location.s);
+        setUserdata(location.state);
         console.log(userdata)
     }
     return ( 
