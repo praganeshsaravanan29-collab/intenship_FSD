@@ -1,16 +1,31 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 
 function App() {
  // const [email, setEmail] = useState("....")
-  // const [pass, setPass] = useState("")
+ //  const [pass, setPass] = useState("")
   function print(){
     console.log("printing inside the print function")
     console.log(email,pass)
   }
+  const[formdata,setformdata]=useState({
+    email:"",
+    password:""
+  })
+  function handlechange(e){
+    e.preventDefault();
+    setformdata({
+      ...formdata,
+      [e.target.name]:e.target.value
+    })
+  }
+  const navigate=useNavigate();
+
   const e = (event) => {
     event.preventDefault()
-    console.log(email,pass)
+    console.log(formdata.email,formdata.password)
+    navigate("/dashboard",{state:formdata})
   }
   return (
         
@@ -28,9 +43,9 @@ function App() {
         
     
         <form onSubmit={e}>
-            <input type='email' required placeholder='enter your email' value={email} onChange={(e)=>{setEmail(e.target.value)}}/>
+            <input type='email' required placeholder='enter your email' name='email'iho onChange={handlechange}/>
             <br></br>
-            <input type='password' required placeholder='enter your password' value={pass} onChange={(e)=>{setPass(e.target.value)}}/>
+            <input type='password' required placeholder='enter your password' name='password' onChange={handlechange}/>
             <br></br>
             <button type='submit' className="text-green-500">Submit</button>
         </form>

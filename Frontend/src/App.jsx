@@ -18,11 +18,11 @@ function App(){
         <Route path="/" element={<Login/>} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/tasks" element={<Tasks />} />
-        <Route path="/calender" elements={<Calender />} />
-        <Route path="/clients" elements={<Clients />} />
-        <Route path="/settings" elements={<Settings/>} />
-        <Route path="/team" elements={<Team/>} />
-        <Route path="/Dashboard" elements={<Dashboard/>} />
+        <Route path="/calender" element={<Calender />} />
+        <Route path="/clients" element={<Clients />} />
+        <Route path="/settings" element={<Settings/>} />
+        <Route path="/team" element={<Team/>} />
+        <Route path="/Dashboard" element={<Dashboard/>} />
       </Routes>
     </BrowserRouter>
   )
