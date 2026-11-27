@@ -9,6 +9,11 @@ import Team from '../src/pages/team'
 import Dashboard from './pages/dashboard'
 import Registers from '../src/components/registers'
 import './App.css'
+import Admindashboard from './pages/admin.jsx/Admindashboard'
+import Adminsettings from '../src/pages/admin.jsx/settings'
+import Userdetails from './pages/admin.jsx/userdetails'
+import Admin from './pages/admin.jsx/adminlayout'
+
 
 function App(){
 
@@ -24,6 +29,13 @@ function App(){
         <Route path="/team" element={<Team/>} />
         <Route path="/Dashboard" element={<Dashboard/>} />
         <Route path="/registers" element={<Registers/>} />
+        <Route path="/admin" element={<Admin/>}>
+          <Route path="admindashboard" element={<Admindashboard/>} />
+          <Route path="settings" element={<Adminsettings/>} />
+          <Route path="userdetails" element={<Userdetails/>} />
+        
+        </Route>
+
       </Routes>
     </BrowserRouter>
   )

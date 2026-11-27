@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 function App() {
@@ -9,14 +9,17 @@ function App() {
     console.log("printing inside the print function")
     console.log(email,pass)
   }
-  const[formdata,setformdata]=useState({
+  const location=useLocation();
+ 
+  const[logindata,setlogindata]=useState({
     email:"",
     password:""
   })
+  const regdata=location.state;
   function handlechange(e){
     e.preventDefault();
-    setformdata({
-      ...formdata,
+    setlogindata({
+      ...logindata,  
       [e.target.name]:e.target.value
     })
   }
@@ -24,8 +27,15 @@ function App() {
 
   const e = (event) => {
     event.preventDefault()
-    console.log(formdata.email,formdata.password)
-    navigate("/dashboard",{state:formdata})
+    console.log("regdata",regdata.name)
+    if(logindata.email===regdata.email && logindata.password===regdata.password){
+      
+      alert("login successfull")
+        navigate("/dashboard",{state:logindata})
+    }else{
+      alert("registration failed")
+    }
+   
   }
   return (
         

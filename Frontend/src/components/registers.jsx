@@ -9,10 +9,11 @@ function Register(){
     const {register,handleSubmit,formState:{errors}}=useForm({
         resolver:zodResolver(registerschema)
     })
+
     function onSubmit1(data){
         console.log(data)
         alert("register success")
-        navigate("/")
+        navigate("/",{state:data})   
     }
 
 return(
