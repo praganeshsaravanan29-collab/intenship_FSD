@@ -29,7 +29,7 @@ function App() {
     event.preventDefault()
     console.log("regdata",regdata.name)
     if(logindata.email===regdata.email && logindata.password===regdata.password){
-      
+
       alert("login successfull")
         navigate("/dashboard",{state:logindata})
     }else{
@@ -39,7 +39,7 @@ function App() {
   }
   return (
         
-        <div>
+        <div >
             {/*<h6 className="text-blue-500">Prajan Pi</h6>
             <input type='email' required placeholder='enter your email' value={email} onChange={(e)=>{setEmail(e.target.value)}}/>
             <br></br>
@@ -52,12 +52,13 @@ function App() {
             
         
     
-        <form onSubmit={e}>
-            <input type='email' required placeholder='enter your email' name='email'iho onChange={handlechange}/>
+        <form onSubmit={e}  className="flex flex-col gap-3 max-w-sm mx-auto mt-10 p-6 border border-stone-300 rounded-xl bg-amber-50 shadow-md">
+          <h1 className="text-2xl font-bold text-brown-500 text-center">Login Page</h1>
+            <input type='email' required placeholder='enter your email' name='email' onChange={handlechange}  className="border p-2 rounded-xl text-black"/>
             <br></br>
-            <input type='password' required placeholder='enter your password' name='password' onChange={handlechange}/>
+            <input type='password' required placeholder='enter your password' name='password' onChange={handlechange}  className="border p-2 rounded-xl text-black"/>
             <br></br>
-            <button type='submit' className="text-green-500">Submit</button>
+            <button type='submit'className="bg-blue-500 text-brown p-2 rounded hover:bg-blue-600">Submit</button>
         </form>
       </div>
     )
