@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 function Dashboard() {
@@ -8,12 +8,16 @@ function Dashboard() {
         setUserdata(location.state);
         console.log(userdata)
     }
+    useEffect(()=>{
+        setUserdata(location.state)
+        console.log(userdata)
+    },[])
     return ( 
         <>
         
             dashboard
         <br></br>
-        <button onClick={displaydata}>button</button>
+        <button onClick={displaydata}>bu</button>
         </>
      );
 }
