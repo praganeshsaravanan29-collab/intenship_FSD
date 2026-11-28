@@ -12,6 +12,11 @@ function Dashboard() {
         setUserdata(location.state)
         console.log(userdata)
     },[])
+  
+    const checkendpoint=async()=>{
+        const response=await API.get("/api/get")
+        console.log(response.data)
+    }
     return ( 
         <>
         
